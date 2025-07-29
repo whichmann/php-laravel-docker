@@ -52,7 +52,7 @@ return [
     |
     */
 
-    'url' => env('APP_URL', 'http://localhost'),
+    'url' => env('APP_URL', 'https://spaceblog-v9hl.onrender.com'),
 
     'asset_url' => env('ASSET_URL', null),
 
