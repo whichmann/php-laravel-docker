@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Http\Request;
+use App\Http\Controllers\PostController;
 
 /*
 |--------------------------------------------------------------------------
@@ -12,6 +13,12 @@ use Illuminate\Http\Request;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
+
+// Public API routes for posts
+Route::get('/posts', [PostController::class, 'index']);
+Route::post('/posts', [PostController::class, 'store']);
+Route::delete('/posts/{id}', [PostController::class, 'destroy']);
+
 
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
