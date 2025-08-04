@@ -1,0 +1,143 @@
+@import "tailwindcss";
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+@source '../**/*.blade.php';
+@source '../**/*.js';
+
+@theme {
+    --font-sans: Chicago_12, "Instrument Sans", ui-sans-serif, system-ui,
+        sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
+        "Noto Color Emoji";
+}
+
+body * {
+    font-family: Chicago_12 !important;
+}
+
+select {
+    padding-left: 5px;
+    box-shadow: none;
+    width: auto;
+    background-position: top 5px right 2px;
+}
+
+textarea {
+    border: 1.5px solid #000;
+    font-size: 18px;
+    padding-left: 5px;
+}
+textarea:focus {
+    outline: none !important;
+}
+.container {
+    max-width: 600px;
+    margin: 3rem auto;
+    padding: 0.5rem;
+    display: flex;
+    flex-direction: column;
+}
+.form-input {
+    width: 100%;
+    margin-bottom: 5px;
+}
+.form-btn {
+    margin-top: 15px;
+}
+.post {
+    margin-bottom: 1rem;
+    border-radius: 0;
+    box-shadow: none;
+    margin: 5px 5px;
+    padding: 0 5px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    min-height: 5.5rem;
+}
+
+.post-title {
+    font-family: Chicago_12 !important;
+    font-weight: bold;
+    font-size: 1.1rem;
+    font-family: inherit;
+    text-shadow: none;
+}
+.post-body {
+    margin-top: 12px;
+    font-family: inherit;
+    font-size: 1rem;
+    font-family: Chicago_12 !important;
+    white-space: pre-line;
+}
+.post-date {
+    font-size: 0.85em;
+    font-weight: 200;
+    margin-top: 0.3rem;
+    margin-bottom: 0;
+    margin-top: auto;
+    align-self: flex-end;
+    font-family: Chicago_12 !important;
+    color: darkgray;
+}
+.no-posts {
+    text-align: center;
+}
+.post-controls {
+    position: absolute;
+    top: 0.3rem;
+    right: 0.3rem;
+    display: flex;
+    gap: 0.3rem;
+    z-index: 2;
+}
+.post-control {
+    position: static;
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
+    width: 1.5rem;
+    height: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.post-control img {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.edit-btn {
+    /* display: none; */
+}
+
+.link {
+    text-decoration: none !important;
+    font-family: Chicago_12 !important;
+}
+
+.add-post-container {
+    padding: 1.5rem 0.5rem 0.5rem;
+    section:first-of-type {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+@media (max-width: 600px) {
+    .container {
+        border: none;
+        box-shadow: none;
+        margin: 0;
+    }
+    .main {
+        margin: 0;
+    }
+    .post {
+        border: none;
+    }
+}

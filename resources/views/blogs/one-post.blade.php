@@ -1,0 +1,3 @@
+<x-layout :title="$post['title']">
+    <x-post :id="$post['id']" :space="$post['space']" :author="$post['author']" :created_at="$post['created_at']" :title="$post['title']" :body="$post['body']" />
+</x-layout>
