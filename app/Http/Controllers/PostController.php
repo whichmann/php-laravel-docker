@@ -7,7 +7,36 @@ use Illuminate\Http\Request;
 
 class PostController extends Controller
 {
-    // Fetch all posts
+    public function getPosts()
+    {
+        $posts = Post::orderBy('created_at', 'desc')->get();
+        return $posts;
+    }
+
+    public function posts()
+    {
+        $posts = Post::orderBy('created_at', 'desc')->paginate(10);
+        return view('blogs.my-blog', ['posts' => $posts]);
+    }
+
+    public function show(Post $post)
+    {
+        $post->load('space');
+        return view('blogs.one-post', ['post' => $post]);
+    }
+
+    public function createPost()
+    {
+        $spaces = Space::all();
+        return view('blogs.add-post', ["spaces" => $spaces]);
+    }
+
+    public function deletePost(Post $post)
+    {
+        $post->delete();
+        return redirect()->route('all-my-posts')->with('success', 'Post deleted successfully!');
+    }
+     // Fetch all posts
     public function index()
     {
         return response()->json(Post::all());
